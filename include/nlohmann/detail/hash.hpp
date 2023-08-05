@@ -57,22 +57,22 @@ std::size_t hash(const BasicJsonType& j)
         case BasicJsonType::value_t::object:
         {
             auto seed = combine(type, j.size());
-            for (const auto& element : j.items())
-            {
-                const auto h = std::hash<string_t> {}(element.key());
-                seed = combine(seed, h);
-                seed = combine(seed, hash(element.value()));
-            }
+            //for (const auto& element : j.items())
+            //{
+            //    const auto h = std::hash<string_t> {}(element.key());
+            //    seed = combine(seed, h);
+            //    seed = combine(seed, hash(element.value()));
+            //}
             return seed;
         }
 
         case BasicJsonType::value_t::array:
         {
             auto seed = combine(type, j.size());
-            for (const auto& element : j)
-            {
-                seed = combine(seed, hash(element));
-            }
+            //for (const auto& element : j)
+            //{
+            //    seed = combine(seed, hash(element));
+            //}
             return seed;
         }
 

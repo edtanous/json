@@ -2765,7 +2765,7 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
 
     /// @name iterators
     /// @{
-
+    private:
     /// @brief returns an iterator to the first element
     /// @sa https://json.nlohmann.me/api/basic_json/begin/
     iterator begin() noexcept
@@ -2857,8 +2857,7 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
     {
         return const_reverse_iterator(cbegin());
     }
-
-  public:
+  
     /// @brief wrapper to access iterator member functions in range-based for
     /// @sa https://json.nlohmann.me/api/basic_json/items/
     /// @deprecated This function is deprecated since 3.1.0 and will be removed in
@@ -2894,7 +2893,7 @@ class basic_json // NOLINT(cppcoreguidelines-special-member-functions,hicpp-spec
     {
         return iteration_proxy<const_iterator>(*this);
     }
-
+public:
     /// @}
 
 
